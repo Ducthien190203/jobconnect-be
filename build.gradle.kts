@@ -2,6 +2,7 @@ import org.gradle.api.tasks.testing.Test
 
 val springdocVersion = "2.6.0"
 val jjwtVersion = "0.12.5"
+val testcontainersVersion = "1.20.3"
 
 plugins {
 	java
@@ -38,6 +39,8 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.security:spring-security-test")
 	testImplementation("com.h2database:h2")
+	testImplementation("org.testcontainers:junit-jupiter:$testcontainersVersion")
+	testImplementation("org.testcontainers:postgresql:$testcontainersVersion")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
