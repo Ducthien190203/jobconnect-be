@@ -12,7 +12,6 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 
@@ -28,7 +27,6 @@ public class Job {
 	@Column(nullable = false, length = 200)
 	private String title;
 
-	@Lob
 	@Column(nullable = false)
 	private String description;
 
