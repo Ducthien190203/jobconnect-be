@@ -10,3 +10,8 @@ spring:
       ddl-auto: validate
   flyway:
     enabled: true
+security:
+  jwt:
+    secret: ${JWT_SECRET:change-this-secret-key-change-this-secret-key}
+    access-token-validity: 15m
+    refresh-token-validity: 7d
