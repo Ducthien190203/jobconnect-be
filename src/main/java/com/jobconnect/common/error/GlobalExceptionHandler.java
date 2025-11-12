@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.jobconnect.auth.exception.EmailAlreadyUsedException;
 import com.jobconnect.auth.token.RefreshTokenException;
+import com.jobconnect.job.JobNotFoundException;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
@@ -61,6 +62,14 @@ public class GlobalExceptionHandler {
 	public ProblemDetail handleUserNotFound(UsernameNotFoundException ex) {
 		ProblemDetail detail = ProblemDetail.forStatus(HttpStatus.NOT_FOUND);
 		detail.setTitle("User not found");
+		detail.setDetail(ex.getMessage());
+		return detail;
+	}
+
+	@ExceptionHandler(JobNotFoundException.class)
+	public ProblemDetail handleJobNotFound(JobNotFoundException ex) {
+		ProblemDetail detail = ProblemDetail.forStatus(HttpStatus.NOT_FOUND);
+		detail.setTitle("Job not found");
 		detail.setDetail(ex.getMessage());
 		return detail;
 	}
