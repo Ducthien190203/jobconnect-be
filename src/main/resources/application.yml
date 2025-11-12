@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: jobconnect
+  datasource:
+    url: jdbc:postgresql://localhost:5432/jobconnect
+    username: jobconnect
+    password: jobconnect
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true
