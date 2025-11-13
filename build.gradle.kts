@@ -1,6 +1,6 @@
 import org.gradle.api.tasks.testing.Test
 
-val springdocVersion = "2.6.0"
+val springdocVersion = "2.7.0"
 val jjwtVersion = "0.12.5"
 val testcontainersVersion = "1.20.3"
 
